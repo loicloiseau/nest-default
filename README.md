@@ -31,6 +31,11 @@
 $ npm install
 ```
 
+To install pre-commit hooks
+```bash
+$ npm run prepare
+```
+
 ## Compile and run the project
 
 ```bash
