@@ -5,7 +5,15 @@ import { LoggerModule } from 'nestjs-pino';
 import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [LoggerModule.forRoot(), UsersModule],
+  imports: [
+    LoggerModule.forRoot({
+      pinoHttp: {
+        autoLogging: true,
+        level: process.env.LOG_LEVEL || 'info',
+      },
+    }),
+    UsersModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
