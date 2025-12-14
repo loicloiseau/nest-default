@@ -1,1 +1,5 @@
-npm run lint && npm run format
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run full lint and fail on warnings or errors
+npm run lint -- --max-warnings=0
